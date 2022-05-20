@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="attribute_tree_view_description_settings2" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='comparator_option_setting']" position="after">
+
+                <div class="col-12 col-lg-6 o_setting_box" id="comparator_option_setting">
+                    <div class="o_setting_left_pane">
+                        <field name="additional_information" />
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="additional_information" />
+                        <div class="text-muted">
+                            Show additional Information on the website.
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="website_form_extender_additional_info" model="ir.ui.view">
+        <field name="name">website.form</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website.view_website_form" />
+        <field name="arch" type="xml">
+            <field name="domain" position="after">
+                <div name="additional_info">
+                    <group name="additional_info">
+                        <field name="show_category_info" />
+                        <field name="show_attribute_info" />
+                    </group>
+                </div>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>
